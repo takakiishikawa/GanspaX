@@ -17,7 +17,7 @@
         </div>
         <div>
             {% if user.is_authenticated %}
-            <p>おはようございます☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
+            <p>こんばんは☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
             <p>学習:{{ account.goal }}</p>
             <p>{{ account.job }}</p>
             <p>{{ account.coffee_like }}</p>
