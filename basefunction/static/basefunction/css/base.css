@@ -1,0 +1,21 @@
+.header{
+    background-color:#0e0500;
+    color:#fff;
+    height:120px;
+}
+.logo2{
+    display: block;
+    width: auto;
+    height: 120px;
+}
+
+.header-list{
+    float:right;
+    padding:33px 20px;
+}
+.header-list a{
+    width:auto;
+    float:right;
+    padding:10px 20px;
+    font-size:25px;
+}

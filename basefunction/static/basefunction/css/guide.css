@@ -1,0 +1,69 @@
+.header{
+    background-color:#0e0500;
+    color:#fff;
+    height:120px;
+}
+.logo01{
+    display: block;
+    width: auto;
+    height: 120px;
+}
+
+.header-list{
+    float:right;
+    padding:33px 20px;
+}
+.header-list a{
+    width:auto;
+    float:right;
+    padding:10px 20px;
+    font-size:25px;
+}
+
+
+h1{
+    margin:20px;
+    color:#0e0500;
+}
+.cafe{
+    height: 500px;
+}
+body{
+    font-family:"Avennir Next";
+}
+
+li{
+    list-style:none;
+}
+
+.main{
+    padding:100px 80px;
+    background-color:#9bbc1d;
+}
+.copy-container h1{
+    font-size:50px;
+}
+.copy-container p{
+    font-size:25px;
+}
+
+.footer{
+    background-color:#699220;
+    color:#fff;
+    height:120px;
+    padding:40px;
+}
+.footer-logo{
+    float:left;
+    display: block;
+    width: auto;
+    height:auto;
+}
+.footer-list{
+    float:right;
+}
+.footer-list a{
+    font-size:25px;
+    
+    padding-bottom:20px;
+}

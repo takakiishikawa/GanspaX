@@ -1,0 +1,47 @@
+{% extends "basefunction/base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    {% block css %}
+    <meta charset="utf-8">
+    <title>Ganspa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/guide.css' %}"/>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="header">
+        <div class="header-list">
+            <a href="{% url 'guide' %}">guideページへ</a>
+            <a href="{% url 'users' %}">usersページへ</a>
+            <a href="{% url 'user' %}">userページへ</a>
+        </div>
+        <div class="header-logo">
+        <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
+        </div>
+    </div>
+    <div class="main">
+    <h1>Ganspaは学習したい人を応援する<br>
+        家でスタバの環境構築ができるWebサービスです</h1>
+    <a href="https://us05web.zoom.us/j/81931427678?pwd=TjRSb2hHNko0Nk1ycExnZlpwWnd2Zz09">Ganspaへ参加</a>
+    <p>スタバには、毎日多くの何かを学習したい人が訪れます。</p>
+    <p>家では集中力が続かない、或いは難しいと感じています。</p>
+    <p>Ganspaとは、スタバと同様、或いはそれ以上の学習環境を提供する</p>
+    <p>「to C向け学習環境構築プラットフォーム」となります。</p>
+    </div>
+
+    
+    <div class="footer">
+        <div class="footer-logo">
+         <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
+        </div>
+        <div class="footer-list">
+            <a href="{% url 'guide' %}">guideページへ</a><br>
+            <a href="{% url 'users' %}">usersページへ</a><br>
+            <a href="{% url 'user' %}">userページへ</a>
+        </div>
+    </div> 
+    {% endblock %}
+</body>
+</html>

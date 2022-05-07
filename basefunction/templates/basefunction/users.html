@@ -1,0 +1,30 @@
+{% extends "basefunction/base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Ganspa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/users.css' %}"/>
+</head>
+<body>
+    <p>ユーザー同士のつながり形成やランキング</p>
+
+    <table class="table">
+        <tr>
+            <th>ユーザー番号</th>
+            <th>ユーザーID</th>
+            <th>goal</th>
+            <th>coffee</th>
+        </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.user}}</td>
+            <td>{{item.goal}}</td>
+            <td>{{item.coffee}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

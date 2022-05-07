@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Ganspa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/base.css' %}"/>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="{% url 'guide' %}">guideページへ</a>
+            <a href="{% url 'users' %}">usersページへ</a>
+            <a href="{% url 'user' %}">userページへ</a>
+            <a href="http://localhost:8000/accounts/password_change_form/">パスワードを変更する</a>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+            <p>おはようございます☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
+            <p>学習:{{ account.goal }}</p>
+            <p>{{ account.job }}</p>
+            <p>{{ account.coffee_like }}</p>
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="header-logo">
+          <img src="{% static 'basefunction/img/logo2.png' %}" class="logo2" alt="Ganspa">
+        </div>
+    </header>
+{% block content %}{% endblock %}
+</body>
+</html>

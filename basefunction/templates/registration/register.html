@@ -1,0 +1,49 @@
+{% extends "basefunction/base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    {% block css %}
+
+    <meta charset="utf-8">
+    <title>Ganspa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/register.css' %}"/>
+    {% endblock css %}
+</head>
+<body>
+    {% block content %}
+
+    <h1>新規登録</h1>
+    <div class="reg">
+    <table class="reg_form">
+
+    <form action="" method="post">
+    {% csrf_token %}
+    <p>ユーザーID</p>
+    {{ account_form.username }}
+    <p>パスワード</p>
+    {{ account_form.password }}
+    <p>パスワード（確認用）</p>
+    {{ account_form.password }}
+    <p>フルネーム</p>
+    {{ add_account_form.fullname }}
+    <p>職業</p>
+    {{ add_account_form.job }}
+    <p>Ganspaでの学習ゴール</p>
+    {{ add_account_form.goal }}
+    <p>好きなコーヒー</p>
+    {{ add_account_form.coffee_like }}
+    <p>コーヒーは好き？</p>
+    {{ add_account_form.coffee }}
+    <tr><td></td><td>
+    <button type="submit">新規</button>
+    </td></tr>
+    </form>
+</table>
+    </div>
+    <p>既にアカウントをお持ちですか？<a href="{% url 'login' %}">ログイン</a></p>
+    {% endblock %}
+
+
+</body>
+
