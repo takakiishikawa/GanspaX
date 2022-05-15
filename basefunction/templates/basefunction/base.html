@@ -7,27 +7,29 @@
     <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/base.css' %}"/>
     {% block css %}{% endblock %}
 </head>
+
 <body>
-    <header>
-        <div class="header">
-            <a href="{% url 'guide' %}">guideページへ</a>
-            <a href="{% url 'users' %}">usersページへ</a>
-            <a href="{% url 'user' %}">userページへ</a>
-            <a href="http://localhost:8000/accounts/password_change_form/">パスワードを変更する</a>
-        </div>
-        <div>
-            {% if user.is_authenticated %}
-            <p>こんばんは☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
-            <p>学習:{{ account.goal }}</p>
-            <p>{{ account.job }}</p>
-            <p>{{ account.coffee_like }}</p>
-            {% else %}
-            {% endif %}
-        </div>
-        <div class="header-logo">
-          <img src="{% static 'basefunction/img/logo2.png' %}" class="logo2" alt="Ganspa">
-        </div>
-    </header>
+ <div class="header">
+    <div class="header-logo">
+        <img src="{% static 'basefunction/img/logo2.png' %}" href="" class="btn" alt="Ganspa">    
+   
+        <div id="header-menu">
+        <ul>
+            <a href="">
+            <div class="guide"><a href="{% url 'guide' %}">guideページへ</a></div>
+            <div class="users"><a href="{% url 'users' %}">usersページへ</a></div>
+            <div class="user"><a href="{% url 'user' %}">userページへ</a></div>
+            <div class="logout"><a href="http://localhost:8000/accounts/password_change_form/">パスワードを変更する</a></div>
+            </a>
+        </ul>
+         </div>
+    </div>
+ </div>
+
+
+
+
+
 {% block content %}{% endblock %}
 </body>
 </html>

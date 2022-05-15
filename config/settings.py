@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-x8h!0hb2qomv-^o=(e%u7cqki*@vlx*^&3oc%!f)s7lf5n4=i&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'global_login_required.GlobalLoginRequiredMiddleware', #追加
-
 ]
 
 PUBLIC_PATHS = [
@@ -139,5 +137,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = '/basefunction/top/'
+LOGIN_REDIRECT_URL = '/Ganspa/top/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'

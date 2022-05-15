@@ -11,11 +11,22 @@
 </head>
 <body>
     {% block content %}
+    <div class="header">
+      
+    <div class="memmber-info">
+        {% if user.is_authenticated %}
+        <p>こんばんは☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
+        <p>学習:{{ account.goal }}</p>
+        <p>{{ account.job }}</p>
+        <p>{{ account.coffee_like }}</p>
+        {% else %}
+        {% endif %}
+    </div>
+
     <div class="main">
         <div class="top-wrapper">
         <div class="copy-container">
-            <h1>Ganspaは学習したい人を応援する。再編集。<br>
-                <p>hiromu</p>
+            <h1>Ganspaは学習したい人を応援する。<br>
                 家でスタバの環境構築ができるWebサービスです</h1>
             <img src="{% static 'basefunction/img/cafe.png' %}" class="cafe"/><br>
             <a href="https://us05web.zoom.us/j/81931427678?pwd=TjRSb2hHNko0Nk1ycExnZlpwWnd2Zz09">Ganspaへ参加</a>
@@ -39,7 +50,7 @@
     
     <div class="footer">
         <div class="footer-logo">
-            <!--img src="{% static 'basefunction/img/logo2.png' %}" class="logo2" alt="Ganspa"-->
+            <img src="{% static 'basefunction/img/logo2.png' %}" class="logo2" alt="Ganspa">
         </div>
         <div class="footer-list">
             <ul>

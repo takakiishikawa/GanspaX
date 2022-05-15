@@ -1,3 +1,19 @@
+@charset "UTF-8";
+
+body {
+    font-family:'Hiragino Kaku Gothic Pro','Meiryo','sans-serif';
+    font-size: 15px;
+}
+.memmber-info{
+    width: 15%;
+    height:auto;
+    display:inline-blockl;
+    margin-bottom:5px;
+    vertical-align: right;
+}
+
+
+
 h1{
     margin:20px;
     color:#0e0500;
@@ -5,10 +21,6 @@ h1{
 .cafe{
     height: 500px;
 }
-body{
-    font-family:"Avennir Next";
-}
-
 li{
     list-style:none;
 }
@@ -23,6 +35,21 @@ li{
 .copy-container p{
     font-size:25px;
 }
+.copy-container a{
+    font-size:20px;
+    color:red;
+    background:fff;
+    border: 1px solid #fff;
+    color: #333;
+    transition: all .15s ease;
+}
+.copy-container a hover{
+    background:#333;
+    border: 1px solid #333;
+    color: skyblue;
+    transition: all .3s ease;
+}
+
 
 .footer{
     background-color:#699220;
@@ -35,6 +62,13 @@ li{
     display: block;
     width: auto;
     height:auto;
+}
+.footer-logo img{
+    width: 20%;
+    height:auto;
+    display:inline-blockl;
+    margin-bottom:5px;
+    text-align: left;
 }
 .footer-list{
     float:right;
