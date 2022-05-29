@@ -12,7 +12,6 @@
 <body>
     {% block content %}
     <div class="header">
-      
     <div class="memmber-info">
         {% if user.is_authenticated %}
         <p>こんばんは☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
@@ -61,5 +60,6 @@
         </div>
     </div> 
     {% endblock %}
+    </div>
 </body>
 </html>

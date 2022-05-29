@@ -13,9 +13,9 @@
     {% block content %}
     <div class="header">
         <div class="header-list">
-            <a href="{% url 'guide' %}">guideページへ</a>
-            <a href="{% url 'users' %}">usersページへ</a>
-            <a href="{% url 'user' %}">userページへ</a>
+            <a href="{% url 'Ganspa:guide' %}">guideページへ</a>
+            <a href="{% url 'Ganspa:users' %}">usersページへ</a>
+            <a href="{% url 'Ganspa:user' %}">userページへ</a>
         </div>
         <div class="header-logo">
         <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
@@ -37,9 +37,9 @@
          <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
         </div>
         <div class="footer-list">
-            <a href="{% url 'guide' %}">guideページへ</a><br>
-            <a href="{% url 'users' %}">usersページへ</a><br>
-            <a href="{% url 'user' %}">userページへ</a>
+            <a href="{% url 'Ganspa:guide' %}">guideページへ</a><br>
+            <a href="{% url 'Ganspa:users' %}">usersページへ</a><br>
+            <a href="{% url 'Ganspa:user' %}">userページへ</a>
         </div>
     </div> 
     {% endblock %}

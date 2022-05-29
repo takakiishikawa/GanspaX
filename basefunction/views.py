@@ -1,43 +1,66 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponseRedirect,HttpResponse
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,UpdateView,DeleteView
 from .forms import AccountForm,AddAccountForm
 
-from django.contrib.auth.decorators import login_required
 
 from .models import Account
-from django.shortcuts import redirect
 
 from django.contrib.auth.models import User
 
-#redirect
-@login_required
-def top(request):
-    return render(request,"basefunction/top.html")
+from django.views import View
+from django.template.response import TemplateResponse
 
 
-#各page
-def top(request):
-    account=Account.objects.get(user=request.user)
-    print(account)
-    params={}
-    params["account"]=account
-    return render(request,"basefunction/top.html",context=params)
+from django.contrib.auth import login as auth_login
 
-def guide(request):
-    return render(request,"basefunction/guide.html")
-
-def users(request):
-    return render(request,"basefunction/users.html")
-
-def user(request):
-    return render(request,"basefunction/user.html")
+from django.views.generic import ListView
 
 
-#registration
-class AccountRegistration(TemplateView):
+
+
+class GanspaDeleteView(DeleteView):
+    template_name = "basefunction/delete.html"
+    model = Account
+    success_url = reverse_lazy("Ganspa:delete")
+
+
+
+
+
+class topView(View):
+    def get(self,request,*args,**kwargs):
+        account=Account.objects.get(user=request.user)
+        print(account)
+        params={}
+        params["account"]=account
+        return render(request,"basefunction/top.html",context=params)
+
+class guideView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"basefunction/guide.html")        
+
+
+
+class userView(UpdateView):
+    template_name='basefunction/user.html'
+    model=Account
+    form_class=AccountForm
+    successful_url="/"
+
+
+
+class usersView(ListView):
+        template_name = 'basefunction/users.html'
+        model=Account
+        context_object_name="ganspa_list"
+
+
+
+class registerView(TemplateView):
 
     def __init__(self):
         self.params={
@@ -74,11 +97,3 @@ class AccountRegistration(TemplateView):
 
 
 
-
-def users(request):
-    data=Account.objects.all()
-    params={
-        "data": data,
-    }
-
-    return render(request,"basefunction/users.html",params)
