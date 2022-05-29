@@ -3,28 +3,32 @@
 <!doctype html>
 <html lang="ja">
 <head>
+    {% block css %}
     <meta charset="utf-8">
     <title>Ganspa</title>
     <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/users.css' %}"/>
+    {% endblock %}
 </head>
 <body>
+    {% block content %}
     <p>ユーザー同士のつながり形成やランキング</p>
 
     <table class="table">
         <tr>
-            <th>ユーザー番号</th>
-            <th>ユーザーID</th>
-            <th>goal</th>
-            <th>coffee</th>
+            <th>お名前</th>
+            <th>ジョブ</th>
+            <th>ゴール</th>
+            <th>好きな珈琲</th>
         </tr>
-    {% for item in data %}
+    {% for item in ganspa_list %}
         <tr>
-            <td>{{item.id}}</td>
-            <td>{{item.user}}</td>
+            <td>{{item.fullname}}</td>
+            <td>{{item.job}}</td>
             <td>{{item.goal}}</td>
-            <td>{{item.coffee}}</td>
+            <td>{{item.coffee_like}}</td>
         </tr>
     {% endfor %}
     </table>
+    {% endblock %}
 </body>
 </html>

@@ -11,11 +11,15 @@
 </head>
 <body>
     {% block content %}
-    <h2 class="profile">ユーザー個人の情報を編集できるページ</h2>
-    <form action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="text">
+    <h1>hello</h1>
+    <form action="" method="POST">
+        {{ form.non_field_errors }}
+        {% for field in form %}
+        {{ field }}
+        {{ field.errors }}
+        <hr>
+        {% endfor %}
+        <button type="submit">ログイン</button>{% csrf_token %}
     </form>
     {% endblock %}
 </body>
