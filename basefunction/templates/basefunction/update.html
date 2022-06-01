@@ -1,6 +1,6 @@
+<!doctype html>
 {% extends "basefunction/base.html" %}
 {% load static %}
-<!doctype html>
 <html lang="ja">
 <head>
     {% block css %}
@@ -12,11 +12,7 @@
 <body>
     {% block content %}
     <h2 class="profile">ユーザー個人の情報を編集できるページ</h2>
-    <form action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="text">
-    </form>
+
     {% endblock %}
 </body>
 </html>

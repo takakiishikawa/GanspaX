@@ -1,6 +1,6 @@
+<!doctype html>
 {% extends "basefunction/base.html" %}
 {% load static %}
-<!doctype html>
 <html lang="ja">
 <head>
     {% block css %}
@@ -15,7 +15,7 @@
         <div class="header-list">
             <a href="{% url 'Ganspa:guide' %}">guideページへ</a>
             <a href="{% url 'Ganspa:users' %}">usersページへ</a>
-            <a href="{% url 'Ganspa:user' %}">userページへ</a>
+            <a href="{% url 'Ganspa:update' %}">userページへ</a>
         </div>
         <div class="header-logo">
         <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
@@ -34,12 +34,12 @@
     
     <div class="footer">
         <div class="footer-logo">
-         <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
+        <img src="{% static 'basefunction/img/logo.png' %}" class="logo01" alt="Ganspa">
         </div>
         <div class="footer-list">
             <a href="{% url 'Ganspa:guide' %}">guideページへ</a><br>
             <a href="{% url 'Ganspa:users' %}">usersページへ</a><br>
-            <a href="{% url 'Ganspa:user' %}">userページへ</a>
+            <a href="{% url 'Ganspa:update' %}">userページへ</a>
         </div>
     </div> 
     {% endblock %}

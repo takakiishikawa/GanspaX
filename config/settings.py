@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-x8h!0hb2qomv-^o=(e%u7cqki*@vlx*^&3oc%!f)s7lf5n4=i&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -54,11 +54,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'global_login_required.GlobalLoginRequiredMiddleware', #追加
+
 ]
 
 PUBLIC_PATHS = [
 	'/accounts/login/',  # ディレクトリごと除外することも可能
-    '/basefunction/register/',  # ディレクトリごと除外することも可能
+    '/Ganspa/register/',  # ディレクトリごと除外することも可能
 
 ]
 
@@ -121,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 

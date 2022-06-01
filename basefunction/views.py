@@ -3,8 +3,10 @@ from django.shortcuts import redirect
 from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse,reverse_lazy
 
-from django.views.generic import TemplateView,UpdateView,DeleteView
+from django.views.generic import TemplateView
 from .forms import AccountForm,AddAccountForm
+
+from django.views.generic.edit import UpdateView,DeleteView
 
 
 from .models import Account
@@ -45,11 +47,11 @@ class guideView(View):
 
 
 
-class userView(UpdateView):
-    template_name='basefunction/user.html'
+class GanspaUpdateView(UpdateView):
     model=Account
-    form_class=AccountForm
-    successful_url="/"
+    fields=["job"]
+    template_name = "basefunction/user.html"
+
 
 
 

@@ -1,6 +1,6 @@
+<!doctype html>
 {% extends "basefunction/base.html" %}
 {% load static %}
-<!doctype html>
 <html lang="ja">
 <head>
     {% block css %}
@@ -25,6 +25,7 @@
     <div class="main">
         <div class="top-wrapper">
         <div class="copy-container">
+            <p>{% now "Y年m月d日 h時i分" %}</p>
             <h1>Ganspaは学習したい人を応援する。<br>
                 家でスタバの環境構築ができるWebサービスです</h1>
             <img src="{% static 'basefunction/img/cafe.png' %}" class="cafe"/><br>
