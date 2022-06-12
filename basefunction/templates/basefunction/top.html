@@ -11,18 +11,48 @@
 </head>
 <body>
     {% block content %}
-    <div class="header">
-    <div class="memmber-info">
-        {% if user.is_authenticated %}
-        <p>おはようございます🌤 　 {{ account.fullname }} さん</p>
-        <p>目指すこと:{{ account.goal }}</p>
-        <p>JOB：{{ account.job }}</p>
-        <p>好きな珈琲：{{ account.coffee_like }}</p>
-        {% else %}
-        {% endif %}
-    </div>
+<!-- <div id ="contents"> -->
+    <!-- <div id="smartbanner">
+        <div class="smartbanner-container">
+            <a class="smartbanner-close">×</a> -->
+            <!-- <span class="smartbanner-icon" style="background-image: url("/images/app_icon.png");"></span>
+        </div>
+    </div> -->
+    <header class="top-header">
+        <h1 class="header-logo">
+            <img src="{% static 'basefunction/img/logo2.png' %}" href="{% url 'Ganspa:top' %}" class="btn" alt="Ganspa">
+        </h1>
+            <!-- <a href="{% url 'Ganspa:top' %}"> -->   
+            <nav class="header_menu">
+                <ul class="h_list">
+                    <a href="">
+                    <div class="h_list_item"><a href="{% url 'Ganspa:top' %}">TOP</a></div>
+                    <div class="h_list_item"><a href="{% url 'Ganspa:guide' %}">Ganspaとは</a></div>
+                    <div class="h_list_item"><a href="{% url 'Ganspa:users' %}">参加者情報</a></div>
+                    <div class="h_list_item"><a href="{% url 'Ganspa:update' %}">ユーザー情報の変更</a></div>
+                    <div class="h_list_item"><a href="http://localhost:8000/accounts/password_change_form/">パスワードの変更</a></div>
+                    <div class="h_list_item"><a href="{% url 'logout'%}">ログアウト</a></div>
+                    </a>
+                </ul>
+            </nav>
+            <!-- </a> -->
+        
+
+            
+    </header>
+    
 
     <div class="main">
+        <div id="memmber-info">
+            {% if user.is_authenticated %}
+            <p>おはようございます🌤 　 {{ account.fullname }} さん</p>
+            <p>目指すこと:{{ account.goal }}</p>
+            <p>JOB：{{ account.job }}</p>
+            <p>好きな珈琲：{{ account.coffee_like }}</p>
+            {% else %}
+            {% endif %}
+        </div>
+
         <div class="top-wrapper">
         <div class="copy-container">
             <p>{% now "Y年m月d日 h時i分" %}</p>
@@ -59,8 +89,9 @@
             <li>17:00~22:00</li>
             </ul>
         </div>
-    </div> 
-    {% endblock %}
     </div>
+</div>
+    {% endblock %}
+    
 </body>
 </html>

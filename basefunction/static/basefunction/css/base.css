@@ -4,47 +4,4 @@ body {
     font-family:'Hiragino Kaku Gothic Pro','Meiryo','sans-serif';
     font-size: 15px;
 }
-.header{
-    margin: 0 auto;
-    background-color: #eee;
-}
 
-a {
-    text-decoration:none;
-    color: #333;
-    display:block;
-}
-.header-logo img{
-    width: 15%;
-    height:auto;
-    display:inline-blockl;
-    margin-bottom:5px;
-    vertical-align: left;
-}
-
-#header-menu ul li {
-    line-height: 48px;
-    height: 100%;
-    width:200px;
-    min-width:200px;
-    text-align: right;
-}
-
-#header-menu ul a {
-    display:block;
-    width:150px;
-    text-align:center;
-    margin:0 auto;
-    color:skyblue;
-}
-#header-menu ul a{
-    background:#00A2FF;
-    border:1px solid #00A2FF;
-    color: #fff;
-    transition:all .15s ease;
-}
-#header-menu ul a:hover{
-    background:#fff;
-    color: #00A2FF;
-    transition:all .15s ease;
-}
