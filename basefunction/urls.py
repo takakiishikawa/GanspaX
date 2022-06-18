@@ -10,9 +10,7 @@ urlpatterns=[
     path("guide/",views.guideView.as_view(),name="guide"),
     path("users/",views.usersView.as_view(),name="users"),
     path("register/",views.registerView.as_view(),name="register"),
-    """
     path("delete/<int:pk>",views.GanDeleteView.as_view(), name="delete"),
-    path("update/",views.GanUpdateView.as_view(),name="update"),
-"""
+    path("update/<int:pk>",views.GanUpdateView.as_view(),name="update"),
     #    path("sample/",views.LoginView.as_view(),name="sample"),
 ]

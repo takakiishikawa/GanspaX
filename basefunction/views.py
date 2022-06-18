@@ -43,18 +43,23 @@ class guideView(View):
         return render(request,"basefunction/guide.html")        
 
 
-"""
+
 class GanUpdateView(UpdateView):
-    template_name = "basefunction/user.html"
+    def get(self,request,*args,**kwargs):
+        account=Account.objects.get(user=request.user)
+        return render(request,"basefunction/user.html",{'pk':account.id})
+
     model=Account
-    fields=["job"]
+
+
+
 
 class GanDeleteView(DeleteView):
     template_name = "basefunction/delete.html"
     model = Account
     success_url = reverse_lazy("Ganspa:delete")
 
-"""
+
 
 class usersView(ListView):
         template_name = 'basefunction/users.html'
