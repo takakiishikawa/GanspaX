@@ -24,10 +24,7 @@ from django.views.generic import ListView
 
 
 
-class GanspaDeleteView(DeleteView):
-    template_name = "basefunction/delete.html"
-    model = Account
-    success_url = reverse_lazy("Ganspa:delete")
+
 
 
 
@@ -46,14 +43,18 @@ class guideView(View):
         return render(request,"basefunction/guide.html")        
 
 
-
-class GanspaUpdateView(UpdateView):
+"""
+class GanUpdateView(UpdateView):
+    template_name = "basefunction/user.html"
     model=Account
     fields=["job"]
-    template_name = "basefunction/user.html"
 
+class GanDeleteView(DeleteView):
+    template_name = "basefunction/delete.html"
+    model = Account
+    success_url = reverse_lazy("Ganspa:delete")
 
-
+"""
 
 class usersView(ListView):
         template_name = 'basefunction/users.html'
@@ -87,7 +88,6 @@ class registerView(TemplateView):
             account.save()
             add_account=self.params["add_account_form"].save(commit=False)
             add_account.user=account
-
             add_account.save()
             self.params["AccountCreate"]=True
         else:
