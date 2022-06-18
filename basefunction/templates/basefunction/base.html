@@ -18,7 +18,7 @@
             <div class="guide"><a href="{% url 'Ganspa:top' %}">TOP</a></div>
             <div class="guide"><a href="{% url 'Ganspa:guide' %}">Ganspaとは</a></div>
             <div class="users"><a href="{% url 'Ganspa:users' %}">参加者情報</a></div>
-            <div class="user"><a href="{% url 'Ganspa:update' %}">ユーザー情報の変更</a></div>
+            <div class="user"><a href="{% url 'Ganspa:update' pk=1 %}">ユーザー情報の変更</a></div> 
             <div class="change"><a href="http://localhost:8000/accounts/password_change_form/">パスワードの変更</a></div>
             <div class="logout"><a href="{% url 'logout'%}">ログアウト</a></div>
             </a>
