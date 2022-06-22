@@ -23,44 +23,38 @@ from django.views.generic import ListView
 
 
 
+class topView(View):
+    def get(self, request, *args, **kwargs):
+        account = Account.objects.get(user=request.user)
+        return render(request, "basefunction/top.html", context={'pk': account.id, 'account': account})
 
-class GanspaDeleteView(DeleteView):
+
+class guideView(View):
+    def get(self, request, *args, **kwargs):
+        account=Account.objects.get(user=request.user)
+        return render(request,"basefunction/guide.html", context={'pk': account.id, 'account': account})
+
+
+class GanUpdateView(UpdateView):
+    model=Account
+    template_name = "basefunction/user.html"
+    fields = ['goal', 'coffee', 'job']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['pk'] = self.kwargs['pk']
+        return context
+
+
+class GanDeleteView(DeleteView):
     template_name = "basefunction/delete.html"
     model = Account
     success_url = reverse_lazy("Ganspa:delete")
-
-
-
-
-
-class topView(View):
-    def get(self,request,*args,**kwargs):
-        account=Account.objects.get(user=request.user)
-        print(account)
-        params={}
-        params["account"]=account
-        return render(request,"basefunction/top.html",context=params)
-
-class guideView(View):
-    def get(self,request,*args,**kwargs):
-        return render(request,"basefunction/guide.html")        
-
-
-
-class GanspaUpdateView(UpdateView):
-    model=Account
-    fields=["job"]
-    template_name = "basefunction/user.html"
-
-
-
 
 class usersView(ListView):
         template_name = 'basefunction/users.html'
         model=Account
         context_object_name="ganspa_list"
-
-
 
 class registerView(TemplateView):
 
@@ -87,7 +81,6 @@ class registerView(TemplateView):
             account.save()
             add_account=self.params["add_account_form"].save(commit=False)
             add_account.user=account
-
             add_account.save()
             self.params["AccountCreate"]=True
         else:
@@ -95,7 +88,6 @@ class registerView(TemplateView):
         
         
         return render(request,"registration/register.html",context=self.params)
-
 
 
 
