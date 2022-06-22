@@ -14,12 +14,13 @@
         <img src="{% static 'basefunction/img/logo2.png' %}" href="" class="btn" alt="Ganspa">    
         <div id="header-menu">
         <ul>
-            <a href="">
-            <div class="guide"><a href="{% url 'Ganspa:guide' %}">guideページへ</a></div>
-            <div class="users"><a href="{% url 'Ganspa:users' %}">usersページへ</a></div>
-            <div class="user"><a href="{% url 'Ganspa:update' %}">userページへ</a></div>
+            <div class="guide"><a href="{% url 'Ganspa:top' %}">TOP</a></div>
+            <div class="guide"><a href="{% url 'Ganspa:guide' %}">Ganspaとは</a></div>
+            <div class="users"><a href="{% url 'Ganspa:users' %}">参加者情報</a></div>
+            {% if pk %}
+            <div class="user"><a href="{% url 'Ganspa:update' pk %}">ユーザー情報の変更</a></div>
+            {%  endif %}
             <div class="logout"><a href="http://localhost:8000/accounts/password_change_form/">パスワードを変更する</a></div>
-            </a>
         </ul>
     </div>
     </div>
