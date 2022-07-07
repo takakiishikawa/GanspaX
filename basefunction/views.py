@@ -27,10 +27,6 @@ class topView(View):
         return render(request, "basefunction/top.html")
 
 
-
-
-
-
 class guideView(View):
     def get(self, request, *args, **kwargs):
         return render(request,"basefunction/guide.html")
