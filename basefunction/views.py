@@ -22,6 +22,10 @@ from django.contrib.auth import login as auth_login
 from django.views.generic import ListView
 
 
+class topView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "basefunction/top.html")
+
 
 class guideView(View):
     def get(self, request, *args, **kwargs):
