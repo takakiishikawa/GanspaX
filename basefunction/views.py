@@ -22,6 +22,11 @@ from django.contrib.auth import login as auth_login
 from django.views.generic import ListView
 
 
+<<<<<<< HEAD
+class topView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "basefunction/top.html")
+=======
 
 
 
@@ -50,8 +55,12 @@ class GanUpdateView(UpdateView):
         return render(request,"basefunction/user.html",{'pk':account.id})
 
     model=Account
+>>>>>>> 7fdf035ef125271469b0698aecb130cea40be012
 
 
+class guideView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request,"basefunction/guide.html")
 
 
 class GanDeleteView(DeleteView):
@@ -65,7 +74,6 @@ class usersView(ListView):
         template_name = 'basefunction/users.html'
         model=Account
         context_object_name="ganspa_list"
-
 
 
 class registerView(TemplateView):
