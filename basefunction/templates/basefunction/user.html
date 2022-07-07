@@ -1,0 +1,22 @@
+<!doctype html>
+{% extends "basefunction/base.html" %}
+{% load static %}
+<html lang="ja">
+<head>
+    {% block css %}
+    <meta charset="utf-8">
+    <title>Ganspa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'basefunction/css/user.css' %}"/>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h2 class="profile">ユーザー個人の情報を編集できるページ</h2>
+    <form action='' method='post'>{% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Todoを作成する'></input>
+    </form>
+
+    {% endblock %}
+</body>
+</html>

@@ -22,14 +22,52 @@ from django.contrib.auth import login as auth_login
 from django.views.generic import ListView
 
 
+<<<<<<< HEAD
 class topView(View):
     def get(self, request, *args, **kwargs):
         return render(request, "basefunction/top.html")
+=======
+
+
+
+
+
+
+
+
+class topView(View):
+    def get(self,request,*args,**kwargs):
+        account=Account.objects.get(user=request.user)
+        print(account)
+        params={}
+        params["account"]=account
+        return render(request,"basefunction/top.html",context=params)
+
+class guideView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"basefunction/guide.html")        
+
+
+
+class GanUpdateView(UpdateView):
+    def get(self,request,*args,**kwargs):
+        account=Account.objects.get(user=request.user)
+        return render(request,"basefunction/user.html",{'pk':account.id})
+
+    model=Account
+>>>>>>> 7fdf035ef125271469b0698aecb130cea40be012
 
 
 class guideView(View):
     def get(self, request, *args, **kwargs):
         return render(request,"basefunction/guide.html")
+
+
+class GanDeleteView(DeleteView):
+    template_name = "basefunction/delete.html"
+    model = Account
+    success_url = reverse_lazy("Ganspa:delete")
+
 
 
 class usersView(ListView):

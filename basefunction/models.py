@@ -19,9 +19,9 @@ class Account(models.Model):
         return self.fullname+'('+self.user.username+')'
 
 
-class Ganspa_use(models.Model):
-    ganspa_use=models.IntegerField()
-    ganspa_use_datetime=models.DateTimeField()
+class Gan_use(models.Model):
+    gan_use=models.IntegerField()
+    gan_use_datetime=models.DateTimeField()
 
     class Meta:
         verbose_name="入室回数"
