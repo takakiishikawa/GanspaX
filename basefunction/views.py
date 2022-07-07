@@ -24,31 +24,12 @@ from django.views.generic import ListView
 
 class topView(View):
     def get(self, request, *args, **kwargs):
-        account = Account.objects.get(user=request.user)
-        return render(request, "basefunction/top.html", context={'pk': account.id, 'account': account})
+        return render(request, "basefunction/top.html")
 
 
 class guideView(View):
     def get(self, request, *args, **kwargs):
-        account=Account.objects.get(user=request.user)
-        return render(request,"basefunction/guide.html", context={'pk': account.id, 'account': account})
-
-
-class GanUpdateView(UpdateView):
-    model=Account
-    template_name = "basefunction/user.html"
-    fields = ['goal', 'coffee', 'job']
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['pk'] = self.kwargs['pk']
-        return context
-
-
-class GanDeleteView(DeleteView):
-    template_name = "basefunction/delete.html"
-    model = Account
-    success_url = reverse_lazy("Ganspa:delete")
+        return render(request,"basefunction/guide.html")
 
 
 class usersView(ListView):
