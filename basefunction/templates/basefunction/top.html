@@ -14,10 +14,10 @@
     <div class="header">
     <div class="memmber-info">
         {% if user.is_authenticated %}
-        <p>おはようございます🌤  {{ account.fullname }} さん</p>
-        <p>目指すこと:{{ account.goal }}</p>
-        <p>JOB:{{ account.job }}</p>
-        <p>好きな珈琲：{{ account.coffee_like }}</p>
+        <p>こんにちは--☕️ 　 {{ account.fullname }} さん <a href="{% url 'logout'%}">ログアウト</a></p>
+        <p>学習:{{ account.goal }}</p>
+        <p>{{ account.job }}</p>
+        <p>{{ account.coffee_like }}</p>
         {% else %}
         {% endif %}
     </div>
