@@ -12,10 +12,7 @@
 <body>
     {% block content %}
     <h2 class="profile">ユーザー個人の情報を編集できるページ</h2>
-    <form action='' method='post'>{% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' value='Todoを作成する'></input>
-    </form>
+
 
     {% endblock %}
 </body>
